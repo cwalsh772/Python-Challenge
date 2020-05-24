@@ -27,7 +27,7 @@ with open(vbudget, newline="") as csv_file:
     print(".................................................")
     print("Total months: " + str(total_months))
     print("Total: " + "$" + str(sum(V)))
-    print("Average change: " + "$" + str(revenue_mean))
+    print("Average change:" + "$" +  "{:.2f}".format(float(revenue_mean)))
     print("Greatest Increase in Profits: " + str(months[revenue_change.index(max(revenue_change))+1]) + " " + "$" + str(greatest_increase))
     print("Greatest Decrease in Profits: " + str(months[revenue_change.index(min(revenue_change))+1]) + " " + "$" + str(greatest_decrease))
 
@@ -37,7 +37,7 @@ with open(vbudget, newline="") as csv_file:
     file.write("................................................." + "\n")
     file.write("Total months: " + str(total_months) + "\n")
     file.write("Total: " + "$" + str(sum(V)) + "\n")
-    file.write("Average change: " + "$" + str(revenue_mean) + "\n")
+    file.write("Average change:" + "$" +  "{:.2f}".format(float(revenue_mean))+ "\n")
     file.write("Greatest Increase in Profits: " + str(months[revenue_change.index(max(revenue_change))+1]) + " " + "$" + str(greatest_increase) + "\n")
     file.write("Greatest Decrease in Profits: " + str(months[revenue_change.index(min(revenue_change))+1]) + " " + "$" + str(greatest_decrease) + "\n")
     file.close()
